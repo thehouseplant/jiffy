@@ -22,21 +22,28 @@ deno test
 deno bench
 ```
 
+## Commands
+
+Coming soon...
+
 ## Cross Compiling
 
 Deno supports cross-compilation via the `deno compile` command. Bellow is how it
 is used within this project:
 
 ```zsh
+# Compile for local development
+deno task compile
+
+# Compile for all platforms
+deno task compile:all
+
 # Compile for Linux
-deno compile --target x86_64-unknown-linux-gnu main.ts
+deno task compile:linux
 
-# Compile for macOS
-deno compile --target x86_64-apple-darwin main.ts
-
-# Compile for macOS (Apple Silicon)
-deno compile --target aarch64-apple-darwin main.ts
+# Compile for macOS (x86_64 and ARM)
+deno task compile:macos
 
 # Compile for Windows
-deno compile --target x86_64-pc-windows-msvc main.ts
+deno task compile:windows
 ```
