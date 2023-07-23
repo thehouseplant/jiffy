@@ -1,5 +1,11 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "compile": "deno compile main.ts",
+    "compile:all": "deno compile --target x86_64-unknown-linux-gnu main.ts -o jiffy-x86_64-unknown-linux-gnu && deno compile --target x86_64-apple-darwin main.ts -o jiffy-x86_64-apple-darwin && deno compile --target aarch64-apple-darwin main.ts -o jiffy-aarch64-apple-darwin && deno compile --target x86_64-pc-windows-msvc main.ts -o jiffy-x86_64-pc-windows-msvc",
+    "compile:linux": "deno compile --target x86_64-unknown-linux-gnu main.ts -o jiffy-x86_64-unknown-linux-gnu",
+    "compile:macos": "deno compile --target x86_64-apple-darwin main.ts -o jiffy-x86_64-apple-darwin && deno compile --target aarch64-apple-darwin main.ts -o jiffy-aarch64-apple-darwin",
+    "compile:windows": "deno compile --target x86_64-pc-windows-msvc main.ts -o jiffy-x86_64-pc-windows-msvc",
+    "dev": "deno run --watch main.ts",
+    "fmt": "deno fmt"
   }
 }
