@@ -1,16 +1,15 @@
-import { Confirm, Input, Secret, Select } from "https://deno.land/x/cliffy@v1.0.0-rc.2/prompt/mod.ts";
+import { Input, Secret, Select, prompt } from "https://deno.land/x/cliffy@v1.0.0-rc.2/prompt/mod.ts";
 
-let apikey: string, email: string, team: string;
-
-await main();
-
-async function main() {
-  email = await Input.prompt({
+const result = await prompt([
+  {
+    name: "email",
     message: "Enter your Tyler email address",
-  });
-
-  team = await Select.prompt({
+    type: Input,
+  },
+  {
+    name: "team",
     message: "Select your team",
+    type: Select,
     options: [
       "Access Control",
       "Eagle",
@@ -21,14 +20,12 @@ async function main() {
       "Security",
       "TIRE",
     ],
-  });
-
-  apikey = await Secret.prompt({
+  },
+  {
+    name: "apikey",
     message: "Enter your Atlassian API key",
-  });
-
-  console.log({ email, team, apikey });
-  if (!await Confirm.prompt("Is everything correct?")) {
-    await main();
+    type: Secret,
   }
-}
+]);
+
+console.log(result);
