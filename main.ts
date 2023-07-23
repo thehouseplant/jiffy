@@ -8,6 +8,11 @@ await new Command()
   .meta("deno", Deno.version.deno)
   .meta("v8", Deno.version.v8)
   .meta("typescript", Deno.version.typescript)
+  .command("init", "Initialize new Jiffy setup")
+  .command("create", "Create new Jira tikcet")
+  .command("read", "Read a Jira ticket")
+  .command("update", "Update a Jira ticket")
+  .command("delete", "Delete a Jira ticket")
   .parse(Deno.args);
 
 // Initialization prompt
