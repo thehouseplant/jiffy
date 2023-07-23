@@ -31,8 +31,11 @@ Deno supports cross-compilation via the `deno compile` command. Bellow is how it
 deno compile --target x86_64-unknown-linux-gnu main.ts
 
 # Compile for macOS
-deno compile --target x86_64-apple-darwin & aarch64-apple-darwin
+deno compile --target x86_64-apple-darwin main.ts
+
+# Compile for macOS (Apple Silicon)
+deno compile --target aarch64-apple-darwin main.ts
 
 # Compile for Windows
-deno compile --target x86_64-pc-windows-msvc
+deno compile --target x86_64-pc-windows-msvc main.ts
 ```
