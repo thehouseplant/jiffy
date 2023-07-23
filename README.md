@@ -28,8 +28,8 @@ Coming soon...
 
 ## Cross Compiling
 
-Deno supports cross-compilation via the `deno compile` command. Bellow is how it
-is used within this project:
+Deno supports cross-compilation via the `deno compile` command. Below is how it
+is utilized in this project through the use of Deno's built-in task runner. 
 
 ```zsh
 # Compile for local development
