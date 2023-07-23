@@ -1,5 +1,10 @@
 import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.2/command/mod.ts";
-import { Input, Secret, Select, prompt } from "https://deno.land/x/cliffy@v1.0.0-rc.2/prompt/mod.ts";
+import {
+  Input,
+  prompt,
+  Secret,
+  Select,
+} from "https://deno.land/x/cliffy@v1.0.0-rc.2/prompt/mod.ts";
 
 await new Command()
   .name("jiffy")
@@ -41,7 +46,7 @@ const result = await prompt([
     name: "apikey",
     message: "Enter your Atlassian API key",
     type: Secret,
-  }
+  },
 ]);
 
 console.log(result);

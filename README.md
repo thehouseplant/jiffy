@@ -24,7 +24,8 @@ deno bench
 
 ## Cross Compiling
 
-Deno supports cross-compilation via the `deno compile` command. Bellow is how it is used within this project:
+Deno supports cross-compilation via the `deno compile` command. Bellow is how it
+is used within this project:
 
 ```zsh
 # Compile for Linux
